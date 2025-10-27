@@ -18,7 +18,7 @@ Number of rows in features dataset after droping duplicates: 229474
 
 <img width="566" height="470" alt="image" src="https://github.com/user-attachments/assets/faeddaa9-9699-4704-a017-eb11433d7ee1" />
 
-comments:
+comments: The dataset is imbalanced, with a majority of respondents not diagnosed with diabetes (class 0) and a smaller portion classified as diabetic or prediabetic (class 1).
 
 **HighBP**  
     Description: High blood pressure diagnosed  
@@ -27,7 +27,7 @@ comments:
 
 <img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/4d5c8eb0-06b0-451d-aad3-605b7ca8a0a9" />
 
-comments:
+comments: Respondents with high blood pressure show a markedly higher proportion of diabetes, indicating strong correlation between hypertension and diabetes.
 
 **HighChol**  
     Description: High cholesterol diagnosed  
@@ -36,7 +36,7 @@ comments:
 
 <img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/0c990100-3d53-45e9-a881-731e907fdabd" />
 
-comments:
+comments: A noticeably larger fraction of individuals with high cholesterol are diabetic, suggesting elevated cholesterol is associated with diabetes risk.
 
 **CholCheck**  
     Description: Cholesterol check in last 5 years  
@@ -45,7 +45,7 @@ comments:
 
 <img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/142671c0-379e-45a4-bd06-d0e0998e7d04" />
 
-comments:
+comments: Both diabetic and non-diabetic groups overwhelmingly report having had a cholesterol check, though diabetics have a slightly higher testing rate — likely due to medical monitoring.
 
 **BMI**  
     Description: Body Mass Index  
@@ -54,9 +54,11 @@ comments:
 
 <img width="713" height="470" alt="image" src="https://github.com/user-attachments/assets/efbc241d-0f99-4026-8d50-17380989486f" />
 
+comments: The BMI distribution is approximately normal, centered around the overweight range (25–30), with a tail extending into obesity.
+
 <img width="695" height="547" alt="image" src="https://github.com/user-attachments/assets/bb470c4b-cb20-4084-8ede-0cdf2374aa28" />
 
-comments:
+comments: Diabetic folks on average seem to have higher BMIs based on the average of the two box plots
 
 **Smoker**  
     Description: Smoked ≥100 cigarettes in lifetime  
@@ -65,7 +67,7 @@ comments:
 
 <img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/1dc164d7-2c84-46be-bc74-64d07fb5f9e0" />
 
-comments:
+comments: Smoking history shows only a slight difference between diabetics and non-diabetics, suggesting limited direct association.
 
 **Stroke**  
     Description: Ever told you had a stroke  
@@ -74,7 +76,7 @@ comments:
 
 <img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/7cf8594b-e106-4690-9189-66c07f6c3c90" />
 
-comments:
+comments: A much higher proportion of respondents with a history of stroke are diabetic, reflecting shared cardiovascular risk factors.
 
 **HeartDiseaseorAttack**  
     Description: CHD or heart attack history  
@@ -83,7 +85,7 @@ comments:
 
 <img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/f3afa85a-31fa-4d37-9975-816c78a3f690" />
 
-comments:
+comments: Individuals with previous heart disease or heart attack have a significantly higher proportion of diabetes compared to those without.
 
 **PhysActivity**  
     Description: Physical activity in past 30 days (not job-related)  
@@ -92,7 +94,7 @@ comments:
 
 <img width="598" height="450" alt="image" src="https://github.com/user-attachments/assets/51da6250-f258-4030-8cfd-781bc1cd6144" />
 
-comments:
+comments: Those reporting no physical activity are notably more likely to have diabetes, highlighting physical inactivity as a risk factor.
 
 **Fruits**  
     Description: Fruit consumption ≥1 time per day  
