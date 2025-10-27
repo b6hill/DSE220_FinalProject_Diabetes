@@ -18,12 +18,88 @@ Number of rows in features dataset after droping duplicates: 229474
 
 <img width="566" height="470" alt="image" src="https://github.com/user-attachments/assets/faeddaa9-9699-4704-a017-eb11433d7ee1" />
 
+comments:
 
+**HighBP**  
+    Description: High blood pressure diagnosed  
+    Continuous or Categorical: Categorical (Binary)  
+    Possible values: 0 = No, 1 = Yes
 
+<img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/4d5c8eb0-06b0-451d-aad3-605b7ca8a0a9" />
 
+comments:
 
+**HighChol**  
+    Description: High cholesterol diagnosed  
+    Continuous or Categorical: Categorical (Binary)  
+    Possible values: 0 = No, 1 = Yes
 
+<img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/0c990100-3d53-45e9-a881-731e907fdabd" />
 
+comments:
+
+**CholCheck**  
+    Description: Cholesterol check in last 5 years  
+    Continuous or Categorical: Categorical (Binary)  
+    Possible values: 0 = No, 1 = Yes
+
+<img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/142671c0-379e-45a4-bd06-d0e0998e7d04" />
+
+comments:
+
+**BMI**  
+    Description: Body Mass Index  
+    Continuous or Categorical: Continuous (Integer)  
+    Possible values: Whole number BMI score
+
+<img width="713" height="470" alt="image" src="https://github.com/user-attachments/assets/efbc241d-0f99-4026-8d50-17380989486f" />
+
+<img width="695" height="547" alt="image" src="https://github.com/user-attachments/assets/bb470c4b-cb20-4084-8ede-0cdf2374aa28" />
+
+comments:
+
+**Smoker**  
+    Description: Smoked ≥100 cigarettes in lifetime  
+    Continuous or Categorical: Categorical (Binary)  
+    Possible values: 0 = No, 1 = Yes
+
+<img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/1dc164d7-2c84-46be-bc74-64d07fb5f9e0" />
+
+comments:
+
+**Stroke**  
+    Description: Ever told you had a stroke  
+    Continuous or Categorical: Categorical (Binary)  
+    Possible values: 0 = No, 1 = Yes
+
+<img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/7cf8594b-e106-4690-9189-66c07f6c3c90" />
+
+comments:
+
+**HeartDiseaseorAttack**  
+    Description: CHD or heart attack history  
+    Continuous or Categorical: Categorical (Binary)  
+    Possible values: 0 = No, 1 = Yes
+
+<img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/f3afa85a-31fa-4d37-9975-816c78a3f690" />
+
+comments:
+
+**PhysActivity**  
+    Description: Physical activity in past 30 days (not job-related)  
+    Continuous or Categorical: Categorical (Binary)  
+    Possible values: 0 = No, 1 = Yes
+
+<img width="598" height="450" alt="image" src="https://github.com/user-attachments/assets/51da6250-f258-4030-8cfd-781bc1cd6144" />
+
+comments:
+
+**Fruits**  
+    Description: Fruit consumption ≥1 time per day  
+    Continuous or Categorical: Categorical (Binary)  
+    Possible values: 0 = No, 1 = Yes
+
+<img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/5de5b3e4-c834-4af2-a08f-db9c533f1060" />
 
 
 3)Do you have missing and duplicate values in your dataset?
