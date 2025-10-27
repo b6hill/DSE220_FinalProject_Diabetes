@@ -103,7 +103,7 @@ comments: Those reporting no physical activity are notably more likely to have d
 
 <img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/5de5b3e4-c834-4af2-a08f-db9c533f1060" />
 
-comments:
+comments: Respondents who do not eat fruit daily show a slightly higher rate of diabetes, suggesting diet quality differences between groups.
 
 **Veggies**  
     Description: Vegetable consumption ≥1 time per day  
@@ -112,7 +112,7 @@ comments:
 
 <img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/93887ffd-7979-4bd2-b08a-9072e40cae29" />
 
-comments:
+comments: Similar to fruit consumption, those who eat fewer vegetables are marginally more likely to be diabetic, though the difference is smaller.
 
 **HvyAlcoholConsump**  
     Description: Heavy alcohol consumption  
@@ -121,7 +121,7 @@ comments:
 
 <img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/783a71ed-28fd-49b3-b79e-70f51acc2354" />
 
-comments:
+comments:Heavy alcohol consumers show a somewhat lower proportion of diabetics, possibly reflecting confounding effects (e.g., health screening or small sample size).
     
 **AnyHealthcare**  
     Description: Access to any healthcare coverage  
@@ -130,7 +130,7 @@ comments:
 
 <img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/26659993-59b4-42fa-9d82-b49998c0a8da" />
 
-comments:
+comments: Both groups mostly have healthcare coverage, with negligible difference in diabetes prevalence by coverage status.
 
 **NoDocbcCost**  
     Description: Could not see doctor due to cost  
@@ -139,7 +139,7 @@ comments:
 
 <img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/2e7d67de-4e32-4339-bebe-9f4427847238" />
 
-comments:
+comments: Those unable to see a doctor due to cost have a slightly higher proportion of diabetes, indicating potential healthcare access disparities.
 
 **GenHlth**  
     Description: Self-rated overall health  
@@ -153,7 +153,7 @@ comments:
 
 <img width="589" height="450" alt="image" src="https://github.com/user-attachments/assets/3e6cfa8e-ec5f-490b-b147-1ce4a14e2877" />
 
-comments:
+comments: Respondents rating their health as “fair” or “poor” have a much higher prevalence of diabetes, while those reporting “excellent” or “very good” health are rarely diabetic.
 
 **MentHlth**  
     Description: Days mental health not good  
@@ -162,7 +162,7 @@ comments:
 
 <img width="721" height="470" alt="image" src="https://github.com/user-attachments/assets/9d139ecb-19ac-4de0-a827-8643ccbc6da7" />
 
-comments:
+comments: The distribution of poor mental health days is similar between groups, though diabetics show a slight rightward shift toward more unhealthy days.
 
 **PhysHlth**  
     Description: Days physical health not good  
@@ -171,7 +171,7 @@ comments:
 
 <img width="721" height="470" alt="image" src="https://github.com/user-attachments/assets/9a77b12d-dc86-4639-a2f6-6e51ee944875" />
 
-comments:
+comments: Diabetics tend to report more days of poor physical health than non-diabetics, with a heavier right tail indicating chronic physical challenges.
 
 **DiffWalk**  
     Description: Difficulty walking/climbing stairs  
@@ -180,7 +180,7 @@ comments:
 
 <img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/bafbea77-9b6d-468b-854c-1bd37ec03eab" />
 
-comments:
+comments: A strikingly higher proportion of those with walking difficulty are diabetic, showing strong association between mobility limitations and diabetes.
 
 **Sex**  
     Description: Biological sex  
@@ -189,7 +189,7 @@ comments:
 
 <img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/5a914e46-87c6-4e0a-8e51-138f2b4dd5f6" />
 
-comments:
+comments: Males show a slightly higher proportion of diabetes than females, though the difference is modest.
 
 **Age**  
     Description: Age category (5-year groups)  
@@ -211,7 +211,7 @@ comments:
 
 <img width="589" height="458" alt="image" src="https://github.com/user-attachments/assets/d6690705-3718-4f28-b69a-2e78dfacb502" />
 
-comments:
+comments: The prevalence of diabetes increases sharply with age — older respondents (especially 55+) have much higher rates of diabetes than younger adults.
 
 **Education**  
     Description: Highest education level  
@@ -226,7 +226,7 @@ comments:
 
 <img width="589" height="450" alt="image" src="https://github.com/user-attachments/assets/0f6f99a4-22de-46ec-a79e-a42929ac7a8c" />
 
-comments:
+comments: Diabetes prevalence decreases with higher education levels; individuals with less formal education show a notably greater share of diabetes.
 
 **Income**  
     Description: Annual household income level  
@@ -243,7 +243,7 @@ comments:
 
 <img width="589" height="453" alt="image" src="https://github.com/user-attachments/assets/9ba1d555-83bd-40c2-bbbf-aa8b1889ec14" />
 
-comments:
+comments: Diabetes is more common in lower income brackets, with prevalence steadily declining as income rises — highlighting a clear socioeconomic gradient.
 
 3)Do you have missing and duplicate values in your dataset?
 
