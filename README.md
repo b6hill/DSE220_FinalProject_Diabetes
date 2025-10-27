@@ -101,6 +101,147 @@ comments:
 
 <img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/5de5b3e4-c834-4af2-a08f-db9c533f1060" />
 
+comments:
+
+**Veggies**  
+    Description: Vegetable consumption ≥1 time per day  
+    Continuous or Categorical: Categorical (Binary)  
+    Possible values: 0 = No, 1 = Yes
+
+<img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/93887ffd-7979-4bd2-b08a-9072e40cae29" />
+
+comments:
+
+**HvyAlcoholConsump**  
+    Description: Heavy alcohol consumption  
+    Continuous or Categorical: Categorical (Binary)  
+    Possible values: 0 = No, 1 = Yes
+
+<img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/783a71ed-28fd-49b3-b79e-70f51acc2354" />
+
+comments:
+    
+**AnyHealthcare**  
+    Description: Access to any healthcare coverage  
+    Continuous or Categorical: Categorical (Binary)  
+    Possible values: 0 = No, 1 = Yes
+
+<img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/26659993-59b4-42fa-9d82-b49998c0a8da" />
+
+comments:
+
+**NoDocbcCost**  
+    Description: Could not see doctor due to cost  
+    Continuous or Categorical: Categorical (Binary)  
+    Possible values: 0 = No, 1 = Yes
+
+<img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/2e7d67de-4e32-4339-bebe-9f4427847238" />
+
+comments:
+
+**GenHlth**  
+    Description: Self-rated overall health  
+    Continuous or Categorical: Categorical (Ordinal)  
+    Possible values:  
+    1 = Excellent  
+    2 = Very good  
+    3 = Good  
+    4 = Fair  
+    5 = Poor
+
+<img width="589" height="450" alt="image" src="https://github.com/user-attachments/assets/3e6cfa8e-ec5f-490b-b147-1ce4a14e2877" />
+
+comments:
+
+**MentHlth**  
+    Description: Days mental health not good  
+    Continuous or Categorical: Continuous (Integer)  
+    Possible values: 0–30
+
+<img width="721" height="470" alt="image" src="https://github.com/user-attachments/assets/9d139ecb-19ac-4de0-a827-8643ccbc6da7" />
+
+comments:
+
+**PhysHlth**  
+    Description: Days physical health not good  
+    Continuous or Categorical: Continuous (Integer)  
+    Possible values: 0–30
+
+<img width="721" height="470" alt="image" src="https://github.com/user-attachments/assets/9a77b12d-dc86-4639-a2f6-6e51ee944875" />
+
+comments:
+
+**DiffWalk**  
+    Description: Difficulty walking/climbing stairs  
+    Continuous or Categorical: Categorical (Binary)  
+    Possible values: 0 = No, 1 = Yes
+
+<img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/bafbea77-9b6d-468b-854c-1bd37ec03eab" />
+
+comments:
+
+**Sex**  
+    Description: Biological sex  
+    Continuous or Categorical: Categorical (Binary)  
+    Possible values: 0 = Female, 1 = Male
+
+<img width="597" height="450" alt="image" src="https://github.com/user-attachments/assets/5a914e46-87c6-4e0a-8e51-138f2b4dd5f6" />
+
+comments:
+
+**Age**  
+    Description: Age category (5-year groups)  
+    Continuous or Categorical: Categorical (Ordinal)  
+    Possible values:  
+    1 = 18–24  
+    2 = 25–29  
+    3 = 30–34  
+    4 = 35–39  
+    5 = 40–44  
+    6 = 45–49  
+    7 = 50–54  
+    8 = 55–59  
+    9 = 60–64  
+    10 = 65–69  
+    11 = 70–74  
+    12 = 75–79  
+    13 = 80+
+
+<img width="589" height="458" alt="image" src="https://github.com/user-attachments/assets/d6690705-3718-4f28-b69a-2e78dfacb502" />
+
+comments:
+
+**Education**  
+    Description: Highest education level  
+    Continuous or Categorical: Categorical (Ordinal)  
+    Possible values:  
+    1 = No school / Kindergarten only  
+    2 = Grades 1–8  
+    3 = Grades 9–11  
+    4 = High school graduate / GED  
+    5 = Some college / Tech school  
+    6 = College graduate (4+ years)
+
+<img width="589" height="450" alt="image" src="https://github.com/user-attachments/assets/0f6f99a4-22de-46ec-a79e-a42929ac7a8c" />
+
+comments:
+
+**Income**  
+    Description: Annual household income level  
+    Continuous or Categorical: Categorical (Ordinal)  
+    Possible values:  
+    1 = < $10,000  
+    2 = $10,000–$15,000  
+    3 = $15,000–$20,000  
+    4 = $20,000–$25,000  
+    5 = $25,000–$35,000  
+    6 = $35,000–$50,000  
+    7 = $50,000–$75,000  
+    8 = ≥ $75,000
+
+<img width="589" height="453" alt="image" src="https://github.com/user-attachments/assets/9ba1d555-83bd-40c2-bbbf-aa8b1889ec14" />
+
+comments:
 
 3)Do you have missing and duplicate values in your dataset?
 
