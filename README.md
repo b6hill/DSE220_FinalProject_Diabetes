@@ -253,9 +253,13 @@ No missing values but there are 24206 duplicates which we will drop
 ## Data Preprocessing Plan
 How will you preprocess your data? Handle data imbalance if needed. You should only explain (do not perform pre-processing as that is in MS3) this in your README.md file and link your Jupyter notebook to it. All code and  Jupyter notebooks have be uploaded to your repo. (3 points)
 
+-Feature Selection! we will need to picksome subset of inputs for our model as our original data set has too many feature vectors that may overcomplicate our model and cause overiftting
+-We will definitely need to impute some data in the training set to balence the output classes. We will likely use SMOTE but can experiment with some other methods as well.
+-BMI we can definitely scale as it is roughly normally distributed
+
 
 ## Environment setup
-We are running our project in Google Colab - recommended to also run the code there as well, as this should be seemless. However if you do chose to run this in your own notebook environment we have provided a requirements.txt
+We are running our project in Google Colab - recommended to also run the code there as well, as this should be seemless. However if you do chose to run this in your own notebook environment we have provided a requirements.txt to install the exact lib versions we using.
 
 ## Sources
 dataset link: 
