@@ -271,6 +271,9 @@ Applying oversampling didn't fix the problem and actually made the model's perfo
 **Decision Tree Three**
 By setting min_samples_leaf to 20 and max_depth to 10, we were able to address the overfitting of the previous 2 models. (Closer to the middle on the graph) The train and test accuracies (75% and 70%) are now much closer, which proves the model is generalizing well. This new model is far more effective at the actual goal, as the recall for the positive (diabetes) class dramatically improved from 0.28 to 0.77. This means the model now correctly identifies 77% of the diabetes cases in the test set. The drawback of this model is that it has a lower precision (0.31).
 
+<img width="1238" height="696" alt="image" src="https://github.com/user-attachments/assets/950af762-1783-4476-b543-c0036d0ee628" />
+
+
 ## Decision Tree Conclusion
 
 In this milestone, we trained and tuned a Decision Tree classifier to predict diabetes from the CDC health indicators dataset. Initial models trained on both the original imbalanced data and on a randomly oversampled dataset showed overfitting, with training accuracies near 100% but test accuracies around 77-78%. These initial models failed to identify the minority (diabetes) class, achieving a very low test recall of only 0.28-0.32. By applying hyperparameter tuning and setting max_depth=10 and min_samples_leaf=20 to the balanced, oversampled data, we created a final model that resolved the overfitting, showing a 75% training and 70% testing accuracy. This tuned model improved the test recall for the diabetes class to 0.77. To further improve this, we could move to ensemble models like Random Forest, which should reduce the high number of false positives and improve our low precision . Additionally, using a more sophisticated balancing technique like SMOTE, instead of just duplicating samples, would likely create a better-performing model.
