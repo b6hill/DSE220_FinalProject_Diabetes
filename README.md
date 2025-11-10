@@ -250,12 +250,36 @@ comments: Diabetes is more common in lower income brackets, with prevalence stea
 No missing values but there are 24206 duplicates which we will drop
 
 
-## Data Preprocessing Plan
-How will you preprocess your data? Handle data imbalance if needed. You should only explain (do not perform pre-processing as that is in MS3) this in your README.md file and link your Jupyter notebook to it. All code and  Jupyter notebooks have be uploaded to your repo. (3 points)
+## Data Preprocessing Steps
+- Dropped duplicate values
+- Scaled our numerical colums ('BMI', 'GenHlth', 'MentHlth', 'PhysHlth', 'Age', 'Education', 'Income') using min max scaler to ensure all these values are between 0 and 1
+- Used a RandomOverSampler to balance our training data
 
--Feature Selection! we will need to picksome subset of inputs for our model as our original data set has too many feature vectors that may overcomplicate our model and cause overiftting
--We will definitely need to impute some data in the training set to balence the output classes. We will likely use SMOTE but can experiment with some other methods as well.
--BMI we can definitely scale as it is roughly normally distributed
+
+## Model Training
+
+For our first model for this project we chose to use Deciscion Tree Classifier
+
+**Decision Tree One**
+*Used unabalenced training data with default values for hyperparams*
+These results from the initial Decision Tree model (trained on the imbalanced data) demonstrate overfitting (right side of the graph). The model has a 99% accuracy on the training data and only a 77% accuracy on the unseen test data. The model is failing to predict the positive class (Class 1, diabetes) and achieving a very poor recall of 0.32 and precision of 0.29. This means the model is only correctly identifying 32% of the actual diabetes cases in the test set. Next, we will oversample the data to try to balance it more, and then see if that helped the model.
+
+**Decision Tree Two**
+*Rebalanced the training data using random over sampler along with default values for hyperparams*
+Applying oversampling didn't fix the problem and actually made the model's performance slightly worse (more right on the graph). The training results show the model is  even more overfit than before. It achieved a 100% accuracy on the balanced training set, and the accuracy only went up a little bit to 78% on the testing set compared to the previous model. The model's ability to find the minority class (Class 1, diabetes) worsened, with the recall dropping from 0.32 down to 0.28. This means the model is still failing to identify over 70% of the actual diabetes cases, indicating simply oversampling was not the right solution.
+
+**Decision Tree Three**
+By setting min_samples_leaf to 20 and max_depth to 10, we were able to address the overfitting of the previous 2 models. (Closer to the middle on the graph) The train and test accuracies (75% and 70%) are now much closer, which proves the model is generalizing well. This new model is far more effective at the actual goal, as the recall for the positive (diabetes) class dramatically improved from 0.28 to 0.77. This means the model now correctly identifies 77% of the diabetes cases in the test set. The drawback of this model is that it has a lower precision (0.31).
+
+## Decision Tree Conclusion
+
+In this milestone, we trained and tuned a Decision Tree classifier to predict diabetes from the CDC health indicators dataset. Initial models trained on both the original imbalanced data and on a randomly oversampled dataset showed overfitting, with training accuracies near 100% but test accuracies around 77-78%. These initial models failed to identify the minority (diabetes) class, achieving a very low test recall of only 0.28-0.32. By applying hyperparameter tuning and setting max_depth=10 and min_samples_leaf=20 to the balanced, oversampled data, we created a final model that resolved the overfitting, showing a 75% training and 70% testing accuracy. This tuned model improved the test recall for the diabetes class to 0.77. To further improve this, we could move to ensemble models like Random Forest, which should reduce the high number of false positives and improve our low precision . Additionally, using a more sophisticated balancing technique like SMOTE, instead of just duplicating samples, would likely create a better-performing model.
+
+
+## Next Steps
+
+For the next steps,  our next model we plan to try is a Random Forest model. This model is an ensemble model and is well-suited to fix the two main problems we had. First, it addresses the severe overfitting by averaging the results of many models, making it much more stable and generalizable. Second, while our (Model 3) achieved good recall (0.77), it suffered from very low precision (0.31). A Random Forest is likely to find a better balance between precision and recall, ultimately leading to a more accurate and reliable model for predicting diabetes.
+
 
 
 ## Environment setup
