@@ -5,3 +5,4 @@ ucimlrepo==0.0.7
 scikit-learn==1.6.1
 imbalanced-learn==0.14.0
 numpy==2.0.2
+xgboost==3.1.2
