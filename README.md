@@ -283,7 +283,61 @@ In this milestone, we trained and tuned a Decision Tree classifier to predict di
 
 For the next steps,  our next model we plan to try is a Random Forest model. This model is an ensemble model and is well-suited to fix the two main problems we had. First, it addresses the severe overfitting by averaging the results of many models, making it much more stable and generalizable. Second, while our (Model 3) achieved good recall (0.77), it suffered from very low precision (0.31). A Random Forest is likely to find a better balance between precision and recall, ultimately leading to a more accurate and reliable model for predicting diabetes.
 
+## Model 2: PCA and K-Means
 
+**Preprocessing**
+The original dataset was split into training and testing sets (75% / 25% split). Numerical features were standardized using MinMaxScaler. Categorical features were already encoded prior to PCA (same preprocessing pipeline as Model 1). The target variable (Diabetes_binary) was not used during PCA or clustering steps.
+
+**PCA**
+PCA was performed on the scaled training data only using N=2, it’s carrying 28% variance and N = 12 components, it’s carrying 86.7% variance.
+But, N=12 was used for further analysis and supervised learning.
+A bar plot of PCA explained variance was generated to visualize the importance of each component.
+The transformed PCA features were stored as X_pca.
+
+**K-Means Clustering**
+K-Means was applied to the PCA-transformed data.
+The elbow method was used with k = 1–9, and the “bend” in the curve occurred at k = 4, so:
+Each sample was assigned a cluster label (0–3), stored in cluster_labels.
+These labels were visualized:
+PC1 vs PC2 scatter plot colored by cluster
+Pairplot of PCA components colored by cluster
+Clusters showed partial separation, indicating moderate structure in the PCA feature space.
+
+**PCA + Clustering + Target Merging**
+A combined DataFrame (df) was created with:
+12 PCA components
+Cluster label (0–3)
+Diabetes_binary label
+This allowed direct comparison of cluster composition vs diabetes distribution.
+
+**Hybrid Supervised Classifier**
+To complete Model 2, the cluster labels were used as a new feature in a supervised model:
+Added "cluster" as a new column to both training and testing datasets
+Trained a XGBClassifier with:
+Test_size = 0.2
+random_state = 42
+This classifier represents a different supervised model than Model 1 (Decision Trees), meeting assignment requirements.
+
+## Evaluate Model & Compare Error
+FP (False Positives): predicted diabetic but not actually diabetic
+FN (False Negatives): missed diabetics → most critical error
+Model 2’s FN value indicates its ability to detect high-risk cases.
+
+## Model Questions
+Where does your model fit in the fitting graph (Overfitting, Underfitting, Good Fit)? -> Based on the performance metrics, Model 2 falls into the overfitting region of the fitting graph. The training F1-score for the positive class (0.78) is significantly higher than the test F1-score (0.42), and the accuracy drops from 0.76 on the training set to 0.69 on the test set. This large gap indicates that the model has learned patterns specific to the training data—partly due to SMOTE oversampling and the high flexibility of XGBoost—leading to reduced generalization on unseen data. Therefore, Model 2 is overfitting.
+
+What are the next models you are thinking of and why? -> 1. Gradient Boosting (with regularization)
+Models like LightGBM or XGBoost with stronger regularization (gamma, lambda, max_depth) could balance bias and variance better.
+2. Gaussian Mixture Models (GMM) for Clustering
+GMM allows soft clustering and captures non-spherical cluster shapes, potentially producing more meaningful latent features than K-Means.
+3. NMF or SVD instead of PCA
+These decompositions may capture different latent structures that improve downstream classification.
+
+## Model Predictions
+
+## Model 2 Conclusion
+Model 2 combined PCA, K-Means clustering, and an XGBoost classifier. While PCA reduced dimensionality and K-Means provided additional structural information through cluster labels, the final model showed clear overfitting. Training performance was strong (F1 = 0.78 for class 1), but test performance dropped significantly (F1 = 0.42), indicating that the classifier learned patterns specific to the SMOTE-balanced training data rather than generalizable relationships.
+Although the hybrid approach helped reveal latent structure in the data, the discovered clusters did not translate into meaningful improvements in diabetes prediction. To improve Model 2, future work could explore alternative dimensionality reductions (SVD/NMF), more flexible clustering (GMM), or simpler, more regularized classifiers that generalize better. Overall, Model 2 demonstrates the value of unsupervised insights but requires further tuning to achieve stronger predictive accuracy.
 
 ## Environment setup
 We are running our project in Google Colab - recommended to also run the code there as well, as this should be seemless. However if you do chose to run this in your own notebook environment we have provided a requirements.txt to install the exact lib versions we using.
