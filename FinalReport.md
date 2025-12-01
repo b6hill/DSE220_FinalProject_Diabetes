@@ -261,6 +261,26 @@ Possible values:
 
 comments: Diabetes is more common in lower income brackets, with prevalence steadily declining as income rises — highlighting a clear socioeconomic gradient.
 
+### 2.2 Correlation Matrix
+
+<img width="1386" height="1190" alt="image" src="https://github.com/user-attachments/assets/aca13b7b-f881-4717-b79a-3c29efd74cf3" />
+
+The heatmap shows that while most feature correlations are weak (close to 0.00), there are a few moderate/strong relationships. The strongest positive correlations observed are the following: General Health is strongly correlated with Poor Physical Health Days at 0.52 and moderately correlated with Difficulty Walking at 0.45, suggesting these variables measure similar physical traits. Other moderate relationships include Income and Education (0.42), and the connection between High Blood Pressure and High Cholesterol at 0.28.
+
+### 2.3 Scatter Plot with PC1 v PC2 with output class coloring
+<img width="857" height="547" alt="image" src="https://github.com/user-attachments/assets/e1afd32e-6877-44f7-be26-3e122ea55524" />
+
+This PCA scatter plot projects the high-dimensional dataset onto a 2D plane using the first two principal components. The visualization reveals a significant overlap between the diabetic and healthy classes, with no distinct clusters or clear separation boundaries. While the left side of the graph seems to correlate to the non-diabetic and the right side seems to correlate to the diabetic, the separation boundary does not seem very clear.
+
+### 2.4 Pair plots showing clustering with K=4 for PC1-12
+
+<img width="3044" height="2946" alt="image" src="https://github.com/user-attachments/assets/78bac2e5-147d-4567-b43f-c747bcd4b049" />
+
+### 2.5
+
+<img width="3107" height="2946" alt="image" src="https://github.com/user-attachments/assets/1e1d848b-993c-4632-ad94-c0e76251bb81" />
+This pair plot visualizes the distribution of diabetic and non-diabetic cases across the 12 different PC components. Since there are 12 PC components, it can be difficult to interpret how each component is contributing to the overall model. From this visualization its pretty easy to see that perfect classification is difficult with this data.
+
 ## 3 Methods
 
 ### 3.1 Data Exploration
@@ -331,6 +351,7 @@ X_pca_values = pca.fit_transform(X_scaled)
 
 X_pca = pd.DataFrame(X_pca_values, columns=[f'PC{x+1}' for x in range(N)])
 ```
+
 <img width="590" height="390" alt="image" src="https://github.com/user-attachments/assets/b8072d90-823a-4d74-ac82-98fef1e91d43" />
 
 
