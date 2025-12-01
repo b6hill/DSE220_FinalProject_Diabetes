@@ -263,7 +263,112 @@ comments: Diabetes is more common in lower income brackets, with prevalence stea
 
 ## 3 Methods
 
-### 3.1
+### 3.1 Data Exploration
+
+- Checked for and removed missing values and duplicates from our data set. 
+- We also checked the distribution of each attribute in out data set and determined which ones were continuous and which were categorical
+- Looked at correlation matrix to see which attributes had the highest correlation with the target variable and also which attributes had a high level of correlation with each other
+
+### 3.2 Data Preprocessing
+
+#### 3.2.1 Pre-Processing for Decision Tree
+
+- Applied min-max scaling to our continuous cols ('BMI', 'GenHlth', 'MentHlth', 'PhysHlth', 'Age', 'Education', 'Income')
+
+```
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, stratify=y, random_state=42
+)
+
+cols_to_scale = ['BMI', 'GenHlth', 'MentHlth', 'PhysHlth', 'Age', 'Education', 'Income']
+
+scaler = MinMaxScaler()
+scaler.fit(X_train[cols_to_scale])
+
+X_train[cols_to_scale] = scaler.transform(X_train[cols_to_scale])
+X_test[cols_to_scale] = scaler.transform(X_test[cols_to_scale])
+     
+```
+- Considered dropping some of the columns but based on our analysis of the correlation matrix, none of the attributes were overly correlated so we decided to keep all 
+- Train-test split with ratio 80:20
+- RandomOversampler applied to balance our train data
+
+#### 3.2.2 Pre-Processing for XGBoost
+
+In addition to the steps followed in Preprocessing for Decision Tree we also:
+
+- Applied dimension reduction on our dataset using PCA (12 principal components)
+- Applied Kmeans clustering (k=4) and added the cluster label as an addition input to our new model
+- instead of RandomOversampler we decided to try using SMOTE resampling method on our training data
+```
+#rebalance training with SMOTE
+smote = SMOTE(random_state=random_state)
+X_train, y_train = smote.fit_resample(X_train, y_train)
+```
+
+### 3.3 Model 1 - Decision Tree Classifier
+
+For our Decision Tree Classifier, we took an iterive approach to tuning our model.
+
+- Iteration 1 - Baseline Decision Tree:
+*Trained a simple Decision Tree classifier using default hyperparameters.
+No oversampling, no hyperparameter tuning -- Served as the baseline to evaluate how the raw features performed.*
+- Iteration 2 - Decision Tree With random Oversampling:
+*Rebalanced the highly scewed training data.
+Kept the Decision Tree hyperparameters mostly unchanged.
+This iteration isolated the impact of addressing class imbalance.*
+- Iteration 3 - Tuned Decision Tree:
+*Performed hyperparameter tuning through multiple back to back runs and landed on using max_depth = 10 and min_samples_leaf = 20*
+
+
+### 3.4 Model 2 - XGBoost along with PCA and clustering preprocessing techniques
+
+- We first applied PCA with just two principle components but found PC1 and PC2 were only able to capture about 28.2% of the variance in the dataset. We instead opted to pick enough components to capture roughly 85% and therefore went with 12 components which captured, more precisly, 86.7%.
+```
+N = 12
+pca = PCA(n_components=N)
+X_pca_values = pca.fit_transform(X_scaled)
+
+X_pca = pd.DataFrame(X_pca_values, columns=[f'PC{x+1}' for x in range(N)])
+```
+<img width="590" height="390" alt="image" src="https://github.com/user-attachments/assets/b8072d90-823a-4d74-ac82-98fef1e91d43" />
+
+
+- Next we applied k-means clustering. In order to choose an optimal value for k we used the elbow method and ran the clustering for k from 1-9 and founmd k=4 to be the most optimal
+
+```
+k_range = range(1, 10)
+inertia = []
+
+print("Calculating inertia for k=1 to 9")
+
+for k in k_range:
+    kmeans = KMeans(n_clusters=k, random_state=42, n_init=10)
+    kmeans.fit(X_pca)
+    inertia.append(kmeans.inertia_)
+
+# WCSS values
+wcss_df = pd.DataFrame({'Number of Clusters (k)': k_range, 'WCSS (Inertia)': inertia})
+print("\nWCSS Table:")
+display(wcss_df)
+
+# Plot Elbow Curve
+plt.figure(figsize=(8, 5))
+plt.plot(k_range, inertia, marker='o')
+plt.xlabel('Number of clusters (k)')
+plt.ylabel('Inertia')
+plt.title('Elbow Method for Optimal k')
+plt.grid(True)
+plt.xticks(k_range)
+plt.show()
+```
+<img width="722" height="470" alt="image" src="https://github.com/user-attachments/assets/8a62d263-cf34-42aa-b42d-499e7d4c4b53" />
+
+- Using the cluster labels as inputs in addition to our PC1-12, we rebalanced our training data using SMOTE and created an XGBoost model to predict our output class
+
+
+
+
 
 ## 4 Results
 
