@@ -436,8 +436,23 @@ Both the tuned Decision Tree and XGBoost models achieve similar overall accuracy
 
 ## 5 Discusion
 
-### 5.1
+For Model 2, we wanted to understand the data better before building the final classifier. The dataset has many features, and some of them overlap with each other. So first, we used PCA to reduce the number of features and keep only the important information. After that, we used K-Means to group people into clusters based on these PCA features. We added the cluster number as a new feature and trained XGBoost on this combined data. The main idea was that the clusters might give the model extra patterns to learn from.
+When we checked the results, the clusters did not match the diabetes labels very well. XGBoost performed strong on the training data, but the performance dropped on the test data. This shows clear overfitting — the model learned the training patterns too closely and could not generalize. The results make sense because the data is imbalanced, and SMOTE may create synthetic cases that are not fully realistic.
+There are also some limitations. PCA mixes features together, so it’s hard to understand what each component means. K-Means might not find the true groups because it assumes simple cluster shapes. SMOTE can also create samples that may not match real-world patterns. And XGBoost is a powerful model that can overfit if not tuned carefully.
+Overall, Model 2 gave us a different way to explore the data, but the extra PCA and clustering steps did not improve accuracy much. In the future, trying different clustering methods, fewer PCA components, or more regularization might help the model perform better.
 
 ## 6 Conclusion
 
+Overall, we were able to go from cleaning the original CDC data to training and tuning various models to being able to predict with decent accuracy if someone is likely to have diabetes or not. While some models performed better than others, we were able to show that machine learning could be used to benefit the public health. 
+One thing we wish we did differently was instead of just using one decision tree, we could have tried an ensemble method and tried using Random Forest instead. This would’ve potentially averaged out possible errors and boosted performance. Since single decision trees can be unstable and prone to overfitting, averaging them out would likely have raised our low precision score while keeping our recall high. We also wish we could have spent more time working with SMOTE and seeing how creating data points could be better than duplicating existing ones. Generating new, synthetic examples would have helped our model learn actual patterns in the minority class, rather than just memorizing the repeated rows that came from simple random oversampling.
+For final thoughts, this project taught us the reality of working with real-world data.We discovered that a lot of effort happens before modeling, such as the data preparation, cleaning, and feature selection. Working with real-world issues like class imbalance gave us practical experience that datasets can be challenging to work with and analyze. Overall, we learned a lot about working with teammates on real-world issues that have real consequences on our society.
+
+
 ## 7 Statement of Colaboration
+
+Brian Hill - Project Manager, Coder
+Contribution: Brian created the GitHub repository and took the lead on organizing the project. He coordinated collaboration, managed timelines, handled the submission process, and reviewed all code, adding some additional inputs in EDA and preprocessing and training the XGBoost model.
+Arvind Krish - Lead Coder
+Contribution: Arvind worked on code development and focused heavily on data analysis. He completed most of the Milestone 3 work and contributed to preparing intermediate results and documentation.
+Rathan Anireddy - Lead Coder
+Contribution: Rathan worked on code development and completed most of the Milestone 4 tasks. This included implementing the PCA + K-Means + XGBoost pipeline, generating visualizations, producing evaluation metrics, and writing the corresponding analysis.
