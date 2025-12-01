@@ -294,14 +294,21 @@ But, N=12 was used for further analysis and supervised learning.
 A bar plot of PCA explained variance was generated to visualize the importance of each component.
 The transformed PCA features were stored as X_pca.
 
+<img width="590" height="390" alt="download" src="https://github.com/user-attachments/assets/d1966a52-cb68-48d7-8dda-68900e8bbedb" />
+
 **K-Means Clustering**
 K-Means was applied to the PCA-transformed data.
 The elbow method was used with k = 1–9, and the “bend” in the curve occurred at k = 4, so:
+
+<img width="722" height="470" alt="download" src="https://github.com/user-attachments/assets/20522a2a-84a9-4641-8f0c-68fb2e928ed8" />
+
 Each sample was assigned a cluster label (0–3), stored in cluster_labels.
 These labels were visualized:
 PC1 vs PC2 scatter plot colored by cluster
 Pairplot of PCA components colored by cluster
 Clusters showed partial separation, indicating moderate structure in the PCA feature space.
+
+<img width="3044" height="2946" alt="download" src="https://github.com/user-attachments/assets/a439b941-c887-4df2-ba94-48480b9ee5c6" />
 
 **PCA + Clustering + Target Merging**
 A combined DataFrame (df) was created with:
@@ -323,6 +330,10 @@ FP (False Positives): predicted diabetic but not actually diabetic
 FN (False Negatives): missed diabetics → most critical error
 Model 2’s FN value indicates its ability to detect high-risk cases.
 
+<img width="527" height="393" alt="download" src="https://github.com/user-attachments/assets/080f2243-038c-4d1f-b6e3-776c34d3922e" />
+<img width="536" height="393" alt="download" src="https://github.com/user-attachments/assets/9d22f469-9df6-45f0-8995-f4b581c3c024" />
+
+
 ## Model Questions
 Where does your model fit in the fitting graph (Overfitting, Underfitting, Good Fit)? -> Based on the performance metrics, Model 2 falls into the overfitting region of the fitting graph. The training F1-score for the positive class (0.78) is significantly higher than the test F1-score (0.42), and the accuracy drops from 0.76 on the training set to 0.69 on the test set. This large gap indicates that the model has learned patterns specific to the training data—partly due to SMOTE oversampling and the high flexibility of XGBoost—leading to reduced generalization on unseen data. Therefore, Model 2 is overfitting.
 
@@ -334,6 +345,23 @@ GMM allows soft clustering and captures non-spherical cluster shapes, potentiall
 These decompositions may capture different latent structures that improve downstream classification.
 
 ## Model Predictions
+True Negatives (TN) = 26,714, True Positives (TP) = 5,127
+
+Total Correct Predictions: 26,714 + 5,127 = 31,841
+
+True Positives (TP): 5,127
+
+True Negatives (TN): 26,714
+
+False Positives (FP): 12,099
+
+False Negatives (FN): 1,955
+
+Correct Predictions: 31,841
+
+
+<img width="527" height="393" alt="download" src="https://github.com/user-attachments/assets/baa618ad-7243-4af6-a633-4e3bd258fc12" />
+
 
 ## Model 2 Conclusion
 Model 2 combined PCA, K-Means clustering, and an XGBoost classifier. While PCA reduced dimensionality and K-Means provided additional structural information through cluster labels, the final model showed clear overfitting. Training performance was strong (F1 = 0.78 for class 1), but test performance dropped significantly (F1 = 0.42), indicating that the classifier learned patterns specific to the SMOTE-balanced training data rather than generalizable relationships.
