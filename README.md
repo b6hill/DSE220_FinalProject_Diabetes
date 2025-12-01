@@ -302,6 +302,7 @@ The elbow method was used with k = 1–9, and the “bend” in the curve occurr
 
 <img width="722" height="470" alt="download" src="https://github.com/user-attachments/assets/20522a2a-84a9-4641-8f0c-68fb2e928ed8" />
 
+**Optimal Number of Clusters: k = 4**
 Each sample was assigned a cluster label (0–3), stored in cluster_labels.
 These labels were visualized:
 PC1 vs PC2 scatter plot colored by cluster
